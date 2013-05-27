@@ -6,6 +6,7 @@
 //  Copyright (c) 2013 Tamas Czinege. All rights reserved.
 //
 
+#import <Python/Python.h>
 #import "VFQuery.h"
 #import "VFFormatter.h"
 #import "VFCSharpFormatter.h"
@@ -68,6 +69,20 @@ static void setupFormatters();
         if ([formatter canClean:self.queryText])
         {
             return [formatter clean:self.queryText];
+        }
+    }
+    return self.queryText;
+}
+
+-(NSString *)formatAsStringForCopying:(VFFormatterType)formatterType
+{
+    setupFormatters();
+    
+    for (VFFormatter *formatter in formatters)
+    {
+        if ([formatter formatterType] == formatterType)
+        {
+            return [formatter formatAsStringForCopying:self.queryText];
         }
     }
     return self.queryText;

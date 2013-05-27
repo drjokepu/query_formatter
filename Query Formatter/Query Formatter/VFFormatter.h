@@ -7,10 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "VFFormatterType.h"
 
 @interface VFFormatter : NSObject
 
+-(VFFormatterType)formatterType;
 -(BOOL)canClean:(NSString*)str;
 -(NSString*)clean:(NSString*)str;
+-(NSString*)formatAsStringForCopying:(NSString*)str;
 
 @end

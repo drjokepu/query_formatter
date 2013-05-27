@@ -10,12 +10,22 @@
 
 @implementation VFFormatter
 
+-(VFFormatterType)formatterType
+{
+    return VFFormatterTypeUnknown;
+}
+
 -(BOOL)canClean:(NSString *)str
 {
     return NO;
 }
 
 -(NSString *)clean:(NSString *)str
+{
+    return str;
+}
+
+-(NSString *)formatAsStringForCopying:(NSString *)str
 {
     return str;
 }

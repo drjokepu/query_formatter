@@ -10,6 +10,11 @@
 
 @implementation VFCSharpFormatter
 
+-(VFFormatterType)formatterType
+{
+    return VFFormatterTypeCSharp;
+}
+
 -(BOOL)canClean:(NSString *)str
 {
     for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
@@ -48,6 +53,28 @@
     }
     
     return [cleanedString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+}
+
+-(NSString *)formatAsStringForCopying:(NSString *)str
+{
+    NSMutableString *formattedString = [[NSMutableString alloc] init];
+    
+    BOOL first = YES;
+    for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
+    {
+        if (first)
+        {
+            first = NO;
+        }
+        else
+        {
+            [formattedString appendString:@" \" +\n"];
+        }
+        [formattedString appendString:@"\""];
+        [formattedString appendString:[[line stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"] stringByReplacingOccurrencesOfString:@"\"" withString:@"\\\""]];
+    }
+    [formattedString appendString:@"\";\n"];
+    return formattedString;
 }
 
 @end

@@ -7,12 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <Python/Python.h>
+#import "VFFormatterType.h"
 
 @interface VFQuery : NSObject
 @property (nonatomic, strong) NSString *queryText;
 
 -(void)formatWithCallback:(void(^)(NSString *formattedQuery))callback;
 -(NSString*)clean;
+-(NSString*)formatAsStringForCopying:(VFFormatterType)formatterType;
 
 @end

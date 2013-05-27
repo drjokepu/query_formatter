@@ -11,6 +11,7 @@
 		023088371753D88000FE36B8 /* VFCSharpFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 023088361753D88000FE36B8 /* VFCSharpFormatter.m */; };
 		023088391753E74A00FE36B8 /* format_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 023088381753E74A00FE36B8 /* format_icon.pdf */; };
 		0230883C1754064B00FE36B8 /* clean_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0230883B1754064B00FE36B8 /* clean_icon.pdf */; };
+		0230883F1754209F00FE36B8 /* copy_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 0230883E1754209F00FE36B8 /* copy_icon.pdf */; };
 		02B25C1E1752D14E001A6F71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B25C1D1752D14E001A6F71 /* Cocoa.framework */; };
 		02B25C281752D14E001A6F71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B25C261752D14E001A6F71 /* InfoPlist.strings */; };
 		02B25C2A1752D14E001A6F71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B25C291752D14E001A6F71 /* main.m */; };
@@ -88,6 +89,8 @@
 		023088361753D88000FE36B8 /* VFCSharpFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VFCSharpFormatter.m; sourceTree = "<group>"; };
 		023088381753E74A00FE36B8 /* format_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = format_icon.pdf; path = Images/format_icon.pdf; sourceTree = "<group>"; };
 		0230883B1754064B00FE36B8 /* clean_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = clean_icon.pdf; path = Images/clean_icon.pdf; sourceTree = "<group>"; };
+		0230883D1754078D00FE36B8 /* VFFormatterType.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VFFormatterType.h; sourceTree = "<group>"; };
+		0230883E1754209F00FE36B8 /* copy_icon.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = copy_icon.pdf; path = Images/copy_icon.pdf; sourceTree = "<group>"; };
 		02B25C1A1752D14E001A6F71 /* Query Formatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Query Formatter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B25C1D1752D14E001A6F71 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02B25C201752D14E001A6F71 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -143,6 +146,7 @@
 				023088361753D88000FE36B8 /* VFCSharpFormatter.m */,
 				023088321753D68E00FE36B8 /* VFFormatter.h */,
 				023088331753D68E00FE36B8 /* VFFormatter.m */,
+				0230883D1754078D00FE36B8 /* VFFormatterType.h */,
 			);
 			name = Formatters;
 			sourceTree = "<group>";
@@ -151,6 +155,7 @@
 			isa = PBXGroup;
 			children = (
 				0230883B1754064B00FE36B8 /* clean_icon.pdf */,
+				0230883E1754209F00FE36B8 /* copy_icon.pdf */,
 				023088381753E74A00FE36B8 /* format_icon.pdf */,
 			);
 			name = Images;
@@ -339,6 +344,7 @@
 				02B25C3E1752D8BB001A6F71 /* VFMainWindowController.xib in Resources */,
 				023088391753E74A00FE36B8 /* format_icon.pdf in Resources */,
 				0230883C1754064B00FE36B8 /* clean_icon.pdf in Resources */,
+				0230883F1754209F00FE36B8 /* copy_icon.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -11,8 +11,14 @@
 
 @interface VFMainWindowController ()
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
+@property (strong) IBOutlet NSPopUpButton *languagePopUpButton;
+
 -(IBAction)formatQuery:(id)sender;
 -(IBAction)cleanQuery:(id)sender;
+
+-(IBAction)didClickSpecialCopy:(id)sender;
+-(IBAction)didClickSpecialCopyCSharp:(id)sender;
+
 @end
 
 @implementation VFMainWindowController
@@ -42,6 +48,26 @@
     VFQuery *query = [[VFQuery alloc] init];
     query.queryText = [self.textView string];
     [self.textView setString:[query clean]];
+}
+
+-(void)didClickSpecialCopy:(id)sender
+{
+    [self formatQueryForCopyingWithFormatter:((VFFormatterType)[[self.languagePopUpButton selectedItem] tag])];
+}
+
+-(void)didClickSpecialCopyCSharp:(id)sender
+{
+    [self formatQueryForCopyingWithFormatter:VFFormatterTypeCSharp];
+}
+
+-(void)formatQueryForCopyingWithFormatter:(VFFormatterType)formatterType
+{
+    VFQuery *query = [[VFQuery alloc] init];
+    query.queryText = [self.textView string];
+    NSString *formattedString = [query formatAsStringForCopying:formatterType];
+    query = nil;
+    [[NSPasteboard generalPasteboard] clearContents];
+    [[NSPasteboard generalPasteboard] setString:formattedString forType:NSPasteboardTypeString];
 }
 
 @end
