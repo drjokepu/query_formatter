@@ -13,5 +13,6 @@
 @property (nonatomic, strong) NSString *queryText;
 
 -(void)formatWithCallback:(void(^)(NSString *formattedQuery))callback;
+-(NSString*)clean;
 
 @end

@@ -7,8 +7,14 @@
 //
 
 #import "VFQuery.h"
+#import "VFFormatter.h"
+#import "VFCSharpFormatter.h"
 
 static NSOperationQueue *queryOperationQueue = nil;
+static NSArray *formatters = nil;
+
+static void setupQueryOperationQueue();
+static void setupFormatters();
 
 @implementation VFQuery
 
@@ -54,11 +60,32 @@ static NSOperationQueue *queryOperationQueue = nil;
     return formattedString;
 }
 
+-(NSString *)clean
+{
+    setupFormatters();
+    for (VFFormatter *formatter in formatters)
+    {
+        if ([formatter canClean:self.queryText])
+        {
+            return [formatter clean:self.queryText];
+        }
+    }
+    return self.queryText;
+}
+
 static void setupQueryOperationQueue()
 {
     if (queryOperationQueue == nil)
     {
         queryOperationQueue = [[NSOperationQueue alloc] init];
+    }
+}
+
+static void setupFormatters()
+{
+    if (formatters == nil)
+    {
+        formatters = @[[[VFCSharpFormatter alloc] init]];
     }
 }
 

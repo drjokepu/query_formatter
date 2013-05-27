@@ -12,6 +12,7 @@
 @interface VFMainWindowController ()
 @property (nonatomic, strong) IBOutlet NSTextView *textView;
 -(IBAction)formatQuery:(id)sender;
+-(IBAction)cleanQuery:(id)sender;
 @end
 
 @implementation VFMainWindowController
@@ -34,6 +35,13 @@
     [query formatWithCallback:^(NSString *formattedQuery) {
         [self.textView setString:formattedQuery];
     }];
+}
+
+-(void)cleanQuery:(id)sender
+{
+    VFQuery *query = [[VFQuery alloc] init];
+    query.queryText = [self.textView string];
+    [self.textView setString:[query clean]];
 }
 
 @end

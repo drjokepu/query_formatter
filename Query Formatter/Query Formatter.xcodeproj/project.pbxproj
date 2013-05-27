@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		023088341753D68E00FE36B8 /* VFFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 023088331753D68E00FE36B8 /* VFFormatter.m */; };
+		023088371753D88000FE36B8 /* VFCSharpFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 023088361753D88000FE36B8 /* VFCSharpFormatter.m */; };
 		02B25C1E1752D14E001A6F71 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B25C1D1752D14E001A6F71 /* Cocoa.framework */; };
 		02B25C281752D14E001A6F71 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 02B25C261752D14E001A6F71 /* InfoPlist.strings */; };
 		02B25C2A1752D14E001A6F71 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B25C291752D14E001A6F71 /* main.m */; };
@@ -78,6 +80,10 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		023088321753D68E00FE36B8 /* VFFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFFormatter.h; sourceTree = "<group>"; };
+		023088331753D68E00FE36B8 /* VFFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VFFormatter.m; sourceTree = "<group>"; };
+		023088351753D88000FE36B8 /* VFCSharpFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFCSharpFormatter.h; sourceTree = "<group>"; };
+		023088361753D88000FE36B8 /* VFCSharpFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VFCSharpFormatter.m; sourceTree = "<group>"; };
 		02B25C1A1752D14E001A6F71 /* Query Formatter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Query Formatter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		02B25C1D1752D14E001A6F71 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		02B25C201752D14E001A6F71 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -126,6 +132,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		023088311753D66200FE36B8 /* Formatters */ = {
+			isa = PBXGroup;
+			children = (
+				023088351753D88000FE36B8 /* VFCSharpFormatter.h */,
+				023088361753D88000FE36B8 /* VFCSharpFormatter.m */,
+				023088321753D68E00FE36B8 /* VFFormatter.h */,
+				023088331753D68E00FE36B8 /* VFFormatter.m */,
+			);
+			name = Formatters;
+			sourceTree = "<group>";
+		};
 		02B25C111752D14D001A6F71 = {
 			isa = PBXGroup;
 			children = (
@@ -192,6 +209,7 @@
 		02B25C3F1752DAC4001A6F71 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				023088311753D66200FE36B8 /* Formatters */,
 				02B25C411752DB30001A6F71 /* VFQuery.h */,
 				02B25C421752DB30001A6F71 /* VFQuery.m */,
 			);
@@ -319,6 +337,8 @@
 				02B25C311752D14E001A6F71 /* VFAppDelegate.m in Sources */,
 				02B25C3C1752D6B0001A6F71 /* VFMainWindowController.m in Sources */,
 				02B25C431752DB30001A6F71 /* VFQuery.m in Sources */,
+				023088341753D68E00FE36B8 /* VFFormatter.m in Sources */,
+				023088371753D88000FE36B8 /* VFCSharpFormatter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
