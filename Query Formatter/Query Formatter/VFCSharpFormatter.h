@@ -6,8 +6,8 @@
 //  Copyright (c) 2013 Tamas Czinege. All rights reserved.
 //
 
-#import "VFFormatter.h"
+#import "VFCStyleFormatter.h"
 
-@interface VFCSharpFormatter : VFFormatter
+@interface VFCSharpFormatter : VFCStyleFormatter
 
 @end

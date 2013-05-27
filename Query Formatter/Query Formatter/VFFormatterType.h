@@ -12,7 +12,8 @@
 typedef enum
 {
     VFFormatterTypeUnknown = 0,
-    VFFormatterTypeCSharp = 1
+    VFFormatterTypeCSharp = 1,
+    VFFormatterTypeObjectiveC = 2
 } VFFormatterType;
 
 #endif

@@ -10,6 +10,7 @@
 #import "VFQuery.h"
 #import "VFFormatter.h"
 #import "VFCSharpFormatter.h"
+#import "VFObjectiveCFormatter.h"
 
 static NSOperationQueue *queryOperationQueue = nil;
 static NSArray *formatters = nil;
@@ -100,7 +101,7 @@ static void setupFormatters()
 {
     if (formatters == nil)
     {
-        formatters = @[[[VFCSharpFormatter alloc] init]];
+        formatters = @[[[VFObjectiveCFormatter alloc] init], [[VFCSharpFormatter alloc] init]];
     }
 }
 

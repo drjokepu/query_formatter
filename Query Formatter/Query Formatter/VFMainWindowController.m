@@ -18,6 +18,7 @@
 
 -(IBAction)didClickSpecialCopy:(id)sender;
 -(IBAction)didClickSpecialCopyCSharp:(id)sender;
+-(IBAction)didClickSpecialCopyObjectiveC:(id)sender;
 
 @end
 
@@ -58,6 +59,11 @@
 -(void)didClickSpecialCopyCSharp:(id)sender
 {
     [self formatQueryForCopyingWithFormatter:VFFormatterTypeCSharp];
+}
+
+-(void)didClickSpecialCopyObjectiveC:(id)sender
+{
+    [self formatQueryForCopyingWithFormatter:VFFormatterTypeObjectiveC];
 }
 
 -(void)formatQueryForCopyingWithFormatter:(VFFormatterType)formatterType

@@ -17,42 +17,35 @@
 
 -(BOOL)canClean:(NSString *)str
 {
-    for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
+    if ([VFCSharpFormatter isVerbatimCSharpString:str])
     {
-        NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        if (![trimmedLine hasPrefix:@"\""])
-            return NO;
-        if (![trimmedLine hasSuffix:@"\" +"] && ![trimmedLine hasSuffix:@"\"+"] && ![trimmedLine hasSuffix:@"\";"])
-            return NO;
+        return YES;
     }
-    return YES;
+    else
+    {
+        return [super canClean:str];
+    }
+}
+
++(BOOL)isVerbatimCSharpString:(NSString*)str
+{
+    NSString *trimmed = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    return [trimmed hasPrefix:@"@\""] &&  ([trimmed hasSuffix:@"\";"] || [trimmed hasSuffix:@"\""]);
 }
 
 -(NSString *)clean:(NSString *)str
 {
-    if (![self canClean:str]) return str;
-    
-    NSMutableString *cleanedString = [[NSMutableString alloc] init];
-    
-    for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
+    if ([VFCSharpFormatter isVerbatimCSharpString:str])
     {
-        NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-        NSRange substringRange;
-        if ([trimmedLine hasSuffix:@"\" +"])
-        {
-            substringRange = NSMakeRange(1, [trimmedLine length] - 4);
-        }
-        else
-        {
-            substringRange = NSMakeRange(1, [trimmedLine length] - 3);
-        }
-        
-        NSString *cleanedLine = [[[trimmedLine substringWithRange:substringRange] stringByReplacingOccurrencesOfString:@"\\\\" withString:@"\\"] stringByReplacingOccurrencesOfString:@"\\\"" withString:@"\""];
-        [cleanedString appendString:cleanedLine];
-        [cleanedString appendString:@"\n"];
+        NSString *trimmed = [str stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        const int suffixLength = [trimmed hasSuffix:@"\";"] ? 3 : 2;
+        const NSRange range = NSMakeRange(1, [trimmed length] - suffixLength);
+        return [[trimmed substringWithRange:range] stringByReplacingOccurrencesOfString:@"\"\"" withString:@"\""];
     }
-    
-    return [cleanedString stringByTrimmingCharactersInSet:[NSCharacterSet newlineCharacterSet]];
+    else
+    {
+        return [super clean:str];
+    }
 }
 
 -(NSString *)formatAsStringForCopying:(NSString *)str
