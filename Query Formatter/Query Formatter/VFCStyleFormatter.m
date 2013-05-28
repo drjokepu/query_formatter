@@ -15,6 +15,7 @@
     for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
     {
         NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([trimmedLine length] == 0) continue;
         if (![trimmedLine hasPrefix:@"\""])
             return NO;
         if (![trimmedLine hasSuffix:@"\" +"] && ![trimmedLine hasSuffix:@"\"+"] &&
@@ -33,6 +34,8 @@
     for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
     {
         NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([trimmedLine length] == 0) continue;
+        
         NSRange substringRange;
         if ([trimmedLine hasSuffix:@"\" +"])
         {

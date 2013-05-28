@@ -42,18 +42,36 @@
 
 -(void)formatQuery:(id)sender
 {
+    NSString *currentContents = [[NSString alloc] initWithString:[self.textView string]];
     VFQuery *query = [[VFQuery alloc] init];
-    query.queryText = [self.textView string];
+    query.queryText = currentContents;
     [query formatWithCallback:^(NSString *formattedQuery) {
+        NSUndoManager *undoManager = [self.textView undoManager];
+        [undoManager registerUndoWithTarget:self
+                                   selector:@selector(setQueryText:)
+                                     object:currentContents];
+        [undoManager setActionName:@"Format"];
         [self.textView setString:formattedQuery];
     }];
 }
 
+-(void)setQueryText:(NSString*)queryText
+{
+    [self.textView setString:queryText];
+}
+
 -(void)cleanQuery:(id)sender
 {
+    NSString *currentContents = [[NSString alloc] initWithString:[self.textView string]];
     VFQuery *query = [[VFQuery alloc] init];
-    query.queryText = [self.textView string];
-    [self.textView setString:[query clean]];
+    query.queryText = currentContents;
+    NSString *cleanedQuery = [query clean];
+    NSUndoManager *undoManager = [self.textView undoManager];
+    [undoManager registerUndoWithTarget:self
+                               selector:@selector(setQueryText:)
+                                 object:currentContents];
+    [undoManager setActionName:@"Clean"];
+    [self.textView setString:cleanedQuery];
 }
 
 -(void)didClickSpecialCopy:(id)sender

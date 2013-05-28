@@ -21,6 +21,7 @@
     for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
     {
         NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([trimmedLine length] == 0) continue;
         if (first)
         {
             first = NO;
@@ -50,6 +51,7 @@
     for (NSString *line in [str componentsSeparatedByCharactersInSet:[NSCharacterSet newlineCharacterSet]])
     {
         NSString *trimmedLine = [line stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        if ([trimmedLine length] == 0) continue;
         const int prefixLength = first ? 2 : 1;
         NSRange substringRange;
         if ([trimmedLine hasSuffix:@"\";"])

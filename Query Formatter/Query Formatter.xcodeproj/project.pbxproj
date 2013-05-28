@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		020814D21754CCCE008E2F24 /* Python in Frameworks */ = {isa = PBXBuildFile; fileRef = 020814D11754CCCE008E2F24 /* Python */; };
 		023088341753D68E00FE36B8 /* VFFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 023088331753D68E00FE36B8 /* VFFormatter.m */; };
 		023088371753D88000FE36B8 /* VFCSharpFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 023088361753D88000FE36B8 /* VFCSharpFormatter.m */; };
 		023088391753E74A00FE36B8 /* format_icon.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 023088381753E74A00FE36B8 /* format_icon.pdf */; };
@@ -24,7 +25,6 @@
 		02B25C3C1752D6B0001A6F71 /* VFMainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B25C3B1752D6B0001A6F71 /* VFMainWindowController.m */; };
 		02B25C3E1752D8BB001A6F71 /* VFMainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 02B25C3D1752D8BB001A6F71 /* VFMainWindowController.xib */; };
 		02B25C431752DB30001A6F71 /* VFQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 02B25C421752DB30001A6F71 /* VFQuery.m */; };
-		02B25C451752E625001A6F71 /* libpython2.7.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 02B25C441752E625001A6F71 /* libpython2.7.dylib */; };
 		02B25D301752E990001A6F71 /* __init__.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02B25D201752E938001A6F71 /* __init__.py */; };
 		02B25D311752E990001A6F71 /* exceptions.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02B25D251752E938001A6F71 /* exceptions.py */; };
 		02B25D321752E990001A6F71 /* filters.py in CopyFiles */ = {isa = PBXBuildFile; fileRef = 02B25D261752E938001A6F71 /* filters.py */; };
@@ -42,6 +42,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		020814D31754CD11008E2F24 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		02B25D1D1752E8CF001A6F71 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -86,6 +95,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		020814D11754CCCE008E2F24 /* Python */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = Python; path = ../../../../../opt/local/Library/Frameworks/Python.framework/Versions/2.7/Python; sourceTree = "<group>"; };
 		023088321753D68E00FE36B8 /* VFFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFFormatter.h; sourceTree = "<group>"; };
 		023088331753D68E00FE36B8 /* VFFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VFFormatter.m; sourceTree = "<group>"; };
 		023088351753D88000FE36B8 /* VFCSharpFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFCSharpFormatter.h; sourceTree = "<group>"; };
@@ -117,7 +127,6 @@
 		02B25C3D1752D8BB001A6F71 /* VFMainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VFMainWindowController.xib; sourceTree = "<group>"; };
 		02B25C411752DB30001A6F71 /* VFQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VFQuery.h; sourceTree = "<group>"; };
 		02B25C421752DB30001A6F71 /* VFQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VFQuery.m; sourceTree = "<group>"; };
-		02B25C441752E625001A6F71 /* libpython2.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libpython2.7.dylib; path = usr/lib/libpython2.7.dylib; sourceTree = SDKROOT; };
 		02B25D201752E938001A6F71 /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; name = __init__.py; path = ../sqlparse/sqlparse/__init__.py; sourceTree = "<group>"; };
 		02B25D221752E938001A6F71 /* __init__.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = __init__.py; sourceTree = "<group>"; };
 		02B25D231752E938001A6F71 /* filter.py */ = {isa = PBXFileReference; lastKnownFileType = text.script.python; path = filter.py; sourceTree = "<group>"; };
@@ -139,7 +148,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02B25C451752E625001A6F71 /* libpython2.7.dylib in Frameworks */,
+				020814D21754CCCE008E2F24 /* Python in Frameworks */,
 				02B25C1E1752D14E001A6F71 /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -176,8 +185,8 @@
 		02B25C111752D14D001A6F71 = {
 			isa = PBXGroup;
 			children = (
+				020814D11754CCCE008E2F24 /* Python */,
 				0230885D17542EBE00FE36B8 /* icons.icns */,
-				02B25C441752E625001A6F71 /* libpython2.7.dylib */,
 				02B25C231752D14E001A6F71 /* Query Formatter */,
 				02B25C1C1752D14E001A6F71 /* Frameworks */,
 				02B25C1B1752D14E001A6F71 /* Products */,
@@ -309,6 +318,7 @@
 				02B25D1D1752E8CF001A6F71 /* CopyFiles */,
 				02B25D1F1752E8E1001A6F71 /* CopyFiles */,
 				02B25D3B1752E99D001A6F71 /* CopyFiles */,
+				020814D31754CD11008E2F24 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -476,6 +486,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Query Formatter/Query Formatter-Prefix.pch";
 				INFOPLIST_FILE = "Query Formatter/Query Formatter-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/Library/Frameworks/Python.framework/Versions/2.7,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -488,6 +502,10 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Query Formatter/Query Formatter-Prefix.pch";
 				INFOPLIST_FILE = "Query Formatter/Query Formatter-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					/opt/local/Library/Frameworks/Python.framework/Versions/2.7,
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
