@@ -35,6 +35,11 @@
     self.textView.font = [NSFont fontWithName:@"Menlo" size:12];
 }
 
+-(void)windowWillClose:(NSNotification *)notification
+{
+    [NSApp performSelector:@selector(terminate:) withObject:nil afterDelay:0.0];
+}
+
 -(void)formatQuery:(id)sender
 {
     VFQuery *query = [[VFQuery alloc] init];
